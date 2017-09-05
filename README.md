@@ -3,6 +3,7 @@ One Page Layout Of a startup page
 
 use correct html secmantics
 
+Increase the height of nav...
 Mandetory
 1. OPL fixed nav - affix
 2. Hero area animation
