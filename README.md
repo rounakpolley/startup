@@ -18,6 +18,12 @@ Mandetory
 // back to top icon --- floting right corner...
 // cta on hero area
 
+Facing problems with nav adjustments
+`
+Facing problems with nav adjustments
+`
+Facing problems with nav adjustments
+`
 Try
 1. Collapsed nav comes out from the left
 2. Custom scroll bar
