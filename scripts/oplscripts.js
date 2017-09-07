@@ -1,20 +1,24 @@
 $(document).ready(function()
-{     
+{        
+    // change the target or explore position
     var scroll_start = 0;               //starting point of scroll
     var startchange = $('#explore');    //id of 'target element' from where nav style changes
     var offset = startchange.offset();  //offset coordinates for 'target element', relative to the document
-    $('.navbar-inverse').css('background-color', 'rgba(0,0,0,0)');
-  
+    $('nav').removeClass('nav-gradient');
+    $('nav').addClass('nav-transparent');
+    
     $(document).scroll(function() 
     { 
             scroll_start = $(this).scrollTop(); //current vertical position of the scroll bar 
             if(scroll_start > offset.top)
             {   
-                $('.navbar-inverse').css('background-color', 'rgba(0,0,0,0)');
+                $('nav').removeClass('nav-transparent');
+                $('nav').addClass('nav-gradient');
             } 
             else 
             {   
-                $('.navbar-inverse').css('background-color', '#222222');
+                $('nav').removeClass('nav-gradient');
+                $('nav').addClass('nav-transparent');
             }
      });
     $('#nav-about').click(function(evt)
@@ -47,4 +51,10 @@ $(document).ready(function()
         evt.preventDefault();
         $('html, body').animate({ scrollTop: $('#startup_about').offset().top - 53 }, 1000);
     });
+    
+    $('#contact-modal').click(function(){   $('#contact-section').addClass('visible');  });
+    $(window).click(function(evt)
+    {
+        if(evt.target == document.querySelector('#contact-section'))   $('#contact-section').removeClass('visible');   
+    });   
 });
