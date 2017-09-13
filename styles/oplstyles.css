@@ -2,7 +2,7 @@ body {  position : relative; background-color : #888888;}
 
 .affix ~ .container-fluid { position : relative;    top : 30px;  }
 .affix {    top : 0;    width : 100%;    z-index : 9999 !important;  }
-#banner-area {  color : #ffffff;  height : 50px; text-align : center;
+#banner-area {  color : #ffffff;    height : 50px;      text-align : center;
                 background : #0f0c29;
                 background : -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
                 background : linear-gradient(to right, #24243e, #302b63, #0f0c29);
@@ -11,20 +11,43 @@ body {  position : relative; background-color : #888888;}
 #banner-area > h3 > span { color : #666666; }
 
 nav
-{
-    z-index : 1;
+{   z-index : 100;      font-size: 17px;
     background : #000000;
     background : -webkit-linear-gradient(to right, #434343, #000000);
     background : linear-gradient(to right, #434343, #000000);
 }
 .navbar-inverse .navbar-brand { color : #ffffff;    }
-.navbar {   margin-bottom : 0px;  border-radius : 0px;    border : 0px;   border-top : 4px solid #4cff00;
-            text-align : center;
+.navbar-brand {     padding: 0px 15px;        height: 80px;   line-height: 80px;  font-size: 20px; }
+.navbar {   margin-bottom : 0px;    border-radius : 0px;    border : 0px;   border-top : 3px solid #4cff00;
+            min-height : 70px;      text-align : center;    text-align: left;
         }
-.dropdown-menu {    text-align : center;    }
-
-div#startup_nav.navbar-collapse.navbar-right.collapse.in {  overflow-x : hidden;    }
+#nav-dropdown {    text-align : center;    }
+.navbar-form { margin-top : 23px;       width : 200px;  }
+/*div#startup_nav.navbar-collapse.navbar-right.collapse.in {  overflow-x : hidden;    }*/
 #website_search {   color : #4bbf19;   /*padding-top : 7px;*/   }
+
+.navbar-toggle { margin-top: 23px;      padding: 9px 10px !important;   z-index: 500 !important;
+                    /* (80px - button height 34px) / 2 = 23px */ }
+@media (min-width: 768px) 
+{   .navbar-nav > li > a /* (80px - line-height of 27px) / 2 = 26.5px */
+    {   padding-top: 26.5px;    padding-bottom: 26.5px;     line-height: 27px;  }
+}
+
+.navbar-header  {   z-index: 500 !important;}
+.nav-mobile-slide { right: 0 !important;    left: 30vw !important;  }
+@media only screen and (max-width: 767px) 
+{
+    .navbar-collapse
+    {   position: fixed;  top: 53 px;  height: 100%;   width: 100%;    left: 200vw;   z-index: 50;
+        /*transition :all 0.5s ease-out;*/ 
+        background : #000000;
+        background : -webkit-linear-gradient(to right, #434343, #000000);
+        background : linear-gradient(to right, #434343, #000000);
+     }
+    .navbar-nav>li>a    { padding-left: 30px; }
+    .navbar-form        { padding-left: 40px; width: 70%; }
+    #nav-dropdown       { padding: 0px;     margin-left: 25px;   text-align : left;  }
+}
 /*colour overlay on hero area*/
 /*#hero-area:before
 {
